@@ -1,0 +1,29 @@
+{% extends "@App/portfolio/base2.html.twig" %}
+
+{% block title %}AppBundle:User:list{% endblock %}
+
+{% block body %}
+<h1>Welcome to the User:list page</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">age</th>
+            <th scope="col">Path</th>
+        </tr>
+        </thead>
+        {% for user in users  %}
+        <tbody>
+        <tr>
+            <th scope="row">{{ user.nom }}</th>
+            <td>{{ user.prenom }}</td>
+            <td>{{ user.age }}</td>
+            <td><img style=" border-radius: 50%;  width: 160px; height :160px;"
+                     src="{{ asset(user.path|default('../images/newme.jpg')) }}"></td>
+
+        </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

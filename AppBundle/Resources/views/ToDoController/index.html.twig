@@ -1,0 +1,53 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<h1>Welcome to the ToDoController:index page</h1>
+
+{% for message in app.session.flashBag.get('ajout') %}
+
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{% for message1 in app.session.flashBag.get('miseajour') %}
+
+    <div class="alert alert-success" role="alert">
+        {{ message1 }}
+    </div>
+{% endfor %}
+{% for message in app.session.flashBag.get('supprimer') %}
+
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+{% for message in app.session.flashBag.get('nonvalide') %}
+
+    <div class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+{% for title,commentaire in app.session.get('mesTaches') %}
+    <table>
+
+        <tr>  {{ title }}</tr>
+        <tr>
+            : {{ commentaire }}</tr>
+    </table>
+{% endfor %}
+</body>
+</html>

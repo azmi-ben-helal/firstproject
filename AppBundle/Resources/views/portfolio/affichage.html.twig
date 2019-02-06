@@ -1,0 +1,18 @@
+{% extends "@App/portfolio/base2.html.twig" %}
+
+{% block title %}AppBundle:portfolio:affichage{% endblock %}
+
+{% block body %}
+
+
+    {{ parent() }}
+
+    NOM :{{ nom }}<br>
+    PRENOM :{{ prenom }}<br>
+    AGE :{{ age }}<br>
+    Section :{{ section }}
+
+
+
+
+{% endblock %}
